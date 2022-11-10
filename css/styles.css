@@ -93,6 +93,30 @@ body {
   list-style: none;
 }
 
+.main-button {
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+  border: none;
+
+  background-color: var(--brand-color);
+  color: var(--white-base);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+
+  transition: background-color var(--time-distribution), box-shadow var(--time-distribution);
+}
+
+.main-button:hover,
+.main-button:focus {
+  background-color: var(--button-active);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
 /* Шапка */
 
 .header {
@@ -238,31 +262,9 @@ body {
   text-transform: uppercase;
 }
 
-/* Кнопка Замовити послугу */
-
 .hero-button {
-  display: inline-block;
   min-width: 216px;
   padding: 10px 32px;
-  border-radius: 4px;
-  border: none;
-
-  background-color: var(--brand-color);
-  color: var(--white-base);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  letter-spacing: 0.06em;
-
-  transition: background-color var(--time-distribution), box-shadow var(--time-distribution);
-}
-
-.hero-button:hover,
-.hero-button:focus {
-  background-color: var(--button-active);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* Секції */
@@ -491,7 +493,7 @@ body {
 .footer-container {
   display: flex;
   align-items: baseline;
-  gap: 90px;
+  justify-content: space-between;
 }
 
 .footer {
@@ -562,6 +564,54 @@ body {
 .footer-social-link:hover,
 .footer-social-link:focus {
   background-color: var(--brand-color);
+}
+
+/* Підвал форма */
+
+.footer-input-wrap {
+  display: flex;
+}
+
+.footer-input {
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: 12px;
+
+  color: var(--white-base);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  outline: transparent;
+
+  transition: background-color var(--time-distribution);
+}
+
+.footer-input::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--white-transparency);
+}
+
+.footer-input:focus {
+  border-color: var(--brand-color);
+}
+
+.footer-subscribe-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 200px;
+  padding: 10px 28px;
+}
+
+.footer-icon-button {
+  width: 24px;
+  height: 24px;
+  fill: var(--white-base);
 }
 
 /* Портфолію ----------------------------- */
@@ -713,6 +763,7 @@ body {
 
   min-width: 528px;
   min-height: 581px;
+  padding: 40px;
 
   background-color: var(--white-base);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -726,7 +777,7 @@ body {
   transform: translate(-50%, -50%) scale(0) rotate(180deg);
 }
 
-.modal-button {
+.modal-close-button {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -753,4 +804,151 @@ body {
 .modal-close-icon:focus {
   fill: var(--brand-color);
   transform: rotate(90deg);
+}
+
+/* Модальна форма */
+
+.modal-title {
+  margin-bottom: 12px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.modal-area {
+  margin-bottom: 10px;
+}
+
+.modal-input-wrap {
+  position: relative;
+}
+
+.modal-label {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: var(--txt-secondary);
+}
+
+.modal-label span {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.modal-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+  padding-right: 12px;
+
+  color: var(--txt-secondary);
+  font-size: 14px;
+  line-height: 1.42;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: transparent;
+
+  transition: border-color var(--time-distribution), fill var(--time-distribution);
+}
+
+.modal-input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modal-input:focus {
+  border-color: var(--brand-color);
+}
+
+.modal-input:focus + .modal-input-icon {
+  fill: var(--brand-color);
+}
+
+.modal-area-comment {
+  margin-bottom: 20px;
+}
+
+.modal-comment {
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+
+  color: var(--txt-secondary);
+  font-size: 14px;
+  line-height: 1.42;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: transparent;
+  resize: none;
+
+  transition: border-color var(--time-distribution);
+}
+
+.modal-comment::placeholder {
+  font-size: 12px;
+  line-height: 1.66;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-comment:focus {
+  border-color: var(--brand-color);
+}
+
+/* Умови договору */
+
+.modal-check {
+  margin-bottom: 30px;
+}
+
+.modal-text-agreement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--txt-secondary);
+  font-size: 14px;
+  line-height: 1.71;
+}
+
+.modal-text-agreement span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+
+  border: 2px solid var(--txt-primary);
+  border-radius: 2px;
+  fill: transparent;
+
+  transition: border-color var(--time-distribution);
+}
+
+.modal-agreement:checked + .modal-text-agreement span {
+  background-color: var(--brand-color);
+  border-color: transparent;
+  fill: var(--white-base);
+}
+
+.modal-agreement:focus + .modal-text-agreement span {
+  border-color: var(--brand-color);
+}
+
+.modal-agreement-link {
+  color: var(--brand-color);
+}
+
+.modal-send-button {
+  min-width: 200px;
+  padding: 10px 52px;
 }
